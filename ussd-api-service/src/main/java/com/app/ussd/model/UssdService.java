@@ -37,7 +37,7 @@ public class UssdService extends AbstractEntity {
 	
 	private boolean forwarded;
 	
-	private boolean enabled = false;
+	private boolean enabled ;
 	
 	
 	//Relation with Menu 
