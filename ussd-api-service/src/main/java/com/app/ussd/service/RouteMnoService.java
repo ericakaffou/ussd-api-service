@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.app.ussd.Constants;
-import com.app.ussd.dto.RouteMnoDto;
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.exception.Exception;
@@ -16,6 +15,7 @@ import com.app.ussd.model.Covrage;
 import com.app.ussd.model.Mno;
 import com.app.ussd.model.RouteMno;
 import com.app.ussd.model.UssdService;
+import com.app.ussd.model.dto.RouteMnoDto;
 import com.app.ussd.repository.CovrageRepository;
 import com.app.ussd.repository.MnoRepository;
 import com.app.ussd.repository.RouteMnoRepository;

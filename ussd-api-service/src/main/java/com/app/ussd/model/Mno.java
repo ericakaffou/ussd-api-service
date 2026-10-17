@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
-import com.app.ussd.dto.MnoDto;
+import com.app.ussd.model.dto.MnoDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

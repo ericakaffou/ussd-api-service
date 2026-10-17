@@ -4,9 +4,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
-import com.app.ussd.dto.UssdSessionDto;
 import com.app.ussd.model.AbstractEntity;
 import com.app.ussd.model.UssdService;
+import com.app.ussd.model.dto.UssdSessionDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

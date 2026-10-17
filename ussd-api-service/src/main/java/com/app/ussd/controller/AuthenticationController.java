@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ussd.Constants;
-import com.app.ussd.dto.auth.AuthenticationRequest;
-import com.app.ussd.dto.auth.AuthenticationResponse;
+import com.app.ussd.model.dto.auth.AuthenticationRequest;
+import com.app.ussd.model.dto.auth.AuthenticationResponse;
 import com.app.ussd.service.auth.ApplicationUserDetailsService;
 import com.app.ussd.service.auth.JwtUtil;
 
