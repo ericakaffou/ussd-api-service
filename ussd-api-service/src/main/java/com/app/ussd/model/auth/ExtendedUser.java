@@ -20,14 +20,14 @@ public class ExtendedUser extends User {
 
 	public ExtendedUser(String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
-		// TODO Auto-generated constructor stub
+		//  Auto-generated constructor stub
 	}
 	
 	public ExtendedUser(String username, String password,Integer idEntreprise,
 			Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
 		this.idEntreprise = idEntreprise;
-		// TODO Auto-generated constructor stub
+		//  Auto-generated constructor stub
 	}
 
 }
