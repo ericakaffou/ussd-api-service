@@ -14,7 +14,7 @@ public enum ErrorCodes {
 	COVRAGE_NOT_VALID,
 	COVRAGE_ALREADY_EXIST,
 	
-	//TODO Complete the rest of error code
+	
 	CLIENT_NOT_FOUND,
 	CLIENT_NOT_VALID,
 	

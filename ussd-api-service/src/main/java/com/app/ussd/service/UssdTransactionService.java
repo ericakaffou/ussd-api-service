@@ -3,9 +3,8 @@ package com.app.ussd.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import com.app.ussd.Constants;
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
@@ -15,6 +14,7 @@ import com.app.ussd.model.dto.UssdSessionTransactionDto;
 import com.app.ussd.repository.UssdSessionRepository;
 import com.app.ussd.repository.UssdTransactionRepository;
 
+@Service
 public class UssdTransactionService {
 	
 	
@@ -67,8 +67,7 @@ public class UssdTransactionService {
 	    public   UssdSessionTransactionDto toDto(UssdSessionTransaction transaction) {
 	    	
 	    	if (transaction == null) {    		
-	    		return null ;
-	    		// TODO throw an execption
+	    		throw new EntityNotFoundException (Constants.FAILED,ErrorCodes.TRANSACTION_NOT_FOUND);
 	    	}
 	    	
 	    	return UssdSessionTransactionDto.builder()

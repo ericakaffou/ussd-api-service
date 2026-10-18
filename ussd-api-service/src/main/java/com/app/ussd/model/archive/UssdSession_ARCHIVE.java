@@ -4,6 +4,9 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.app.ussd.Constants;
+import com.app.ussd.exception.EntityNotFoundException;
+import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.model.AbstractEntity;
 import com.app.ussd.model.UssdService;
 import com.app.ussd.model.dto.UssdSessionDto;
@@ -14,7 +17,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
-@SuppressWarnings("serial")
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -49,8 +51,7 @@ public class UssdSession_ARCHIVE extends AbstractEntity {
     public  static UssdSessionDto toDto(UssdSession_ARCHIVE ussdSession) {
     	
     	if (ussdSession == null) {    		
-    		return null ;
-    		//TODO 
+    		throw new EntityNotFoundException (Constants.FAILED,ErrorCodes.USSD_SESSION_NOT_FOUND);
     	}
     	
     	return UssdSessionDto.builder()

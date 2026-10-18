@@ -3,9 +3,7 @@ package com.app.ussd.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import com.app.ussd.Constants;
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
@@ -156,8 +154,7 @@ public class UssdServiceService {
     public  UssdServiceDto toDto(UssdService ussdService) {
     	
     	if (ussdService == null) {    		
-    		return null ;
-    		// TODO throw an execption
+    		throw new EntityNotFoundException (Constants.FAILED,ErrorCodes.SERVICE_NOT_FOUND);
     	}
     	
     	return UssdServiceDto.builder()

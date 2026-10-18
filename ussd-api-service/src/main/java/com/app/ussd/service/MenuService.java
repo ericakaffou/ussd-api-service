@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
-
 import com.app.ussd.Constants;
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
@@ -110,8 +109,7 @@ public class MenuService {
     public   MenuDto toDto(Menu menu) {
     	
     	if (menu == null) {    		
-    		return null ;
-    		// TODO throw an execption
+    		throw new EntityNotFoundException (Constants.FAILED,ErrorCodes.MENU_NOT_FOUND);  
     	}
     	
     	return MenuDto.builder()

@@ -3,9 +3,7 @@ package com.app.ussd.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import com.app.ussd.Constants;
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
@@ -138,8 +136,7 @@ public class RouteMnoService  {
     public  RouteMnoDto toDto(RouteMno route) {
     	
     	if (route == null) {    		
-    		return null ;
-    		// TODO throw an execption
+    		throw new EntityNotFoundException (Constants.FAILED,ErrorCodes.ROUTE_MNO_NOT_FOUND);
     	}
     	
     	return RouteMnoDto.builder()
