@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import com.app.ussd.model.Utilisateur;
 
+
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> {
 
    //LEFT JOIN FETCH u.roles charge les rôles dans la même requête SQL que l'utilisateur.
