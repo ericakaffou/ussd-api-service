@@ -28,9 +28,7 @@ public class MeunUssdService {
 	    private final MenuOptionRepository optionRepo;	    
 	    private final MenuRepository menuRepo;
 	    private final SessionParamRepository sessionParamRepo;
-		private final UssdSessionRepository ussdRepo;
-		
-		
+		private final UssdSessionRepository ussdRepo;		
 	
 	
     public MeunUssdService(MenuOptionRepository optionRepo, MenuRepository menuRepo,

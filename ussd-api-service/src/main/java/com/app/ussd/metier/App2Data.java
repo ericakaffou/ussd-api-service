@@ -13,13 +13,9 @@ import lombok.NoArgsConstructor;
 public class App2Data {
 	
 	
-	private UssdSession session ;
-	
-	private String[] parts ;
-	
-	
-	private String input ;
-	
-	
+	private UssdSession session ;	
+	private String[] parts ;	
+	private String input ;	
 	private boolean newSession ;
+	
 }
