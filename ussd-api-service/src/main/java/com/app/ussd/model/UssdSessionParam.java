@@ -3,13 +3,12 @@ package com.app.ussd.model;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@SuppressWarnings("serial")
+
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -23,7 +22,6 @@ import lombok.NoArgsConstructor;
  * 
  */
 public class UssdSessionParam extends AbstractEntity{
-
 	
 	private String paramName;
 	

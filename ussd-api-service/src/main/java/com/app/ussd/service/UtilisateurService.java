@@ -73,11 +73,7 @@ public class UtilisateurService {
 			  }			 
 			  roles.add(optionalRole.get());		
 			}
-		  newUser.setRoles(roles);	
-		  
-		  		  
-		  
-		  
+		  newUser.setRoles(roles);		  
 		  return  this.toDto(userRepo.save(newUser));	
 		
 		    

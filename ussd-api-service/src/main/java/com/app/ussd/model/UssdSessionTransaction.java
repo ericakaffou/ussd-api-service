@@ -9,14 +9,12 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
-@SuppressWarnings("serial")
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class UssdSessionTransaction extends AbstractEntity{
-	
+public class UssdSessionTransaction extends AbstractEntity{	
 	
 	
 	private String   transactionId;
@@ -27,7 +25,7 @@ public class UssdSessionTransaction extends AbstractEntity{
 	
 	private String subscriberInput;
 	
-	private String statusMessage;  // ????
+	private String statusMessage;  
 	
 	private Long menuLevel;	
 	

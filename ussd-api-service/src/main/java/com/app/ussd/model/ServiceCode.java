@@ -2,12 +2,14 @@ package com.app.ussd.model;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-@SuppressWarnings("serial")
+
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -22,14 +24,10 @@ public class ServiceCode extends AbstractEntity{
 	// Relation with CovrageDto
 	@OneToMany(mappedBy = "serviceCode") 
 	private List<Covrage> covrage;  
-	
-	
-	public ServiceCode(Long serviceCode, boolean dedicated) {
-		super();
-		this.serviceCode = serviceCode;
-		this.dedicated = dedicated;
-	//	this.registrationDate = registrationDate;
-	}
+
+	@ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 	
 	
 	

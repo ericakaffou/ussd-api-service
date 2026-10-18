@@ -1,7 +1,6 @@
 package com.app.ussd.model;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,15 +10,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@SuppressWarnings("serial")
+
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class UssdService extends AbstractEntity {
-	
+public class UssdService extends AbstractEntity {	
 	
 	
 	private String serviceName;	
@@ -37,13 +35,11 @@ public class UssdService extends AbstractEntity {
 	
 	private boolean forwarded;
 	
-	private boolean enabled ;
-	
+	private boolean enabled ;	
 	
 	//Relation with Menu 
     @OneToMany(mappedBy = "service") 
 	private List<Menu> listMenu;    
-    
   
     @OneToMany(mappedBy = "service") 
   	private List<UssdSession> ussdSession;

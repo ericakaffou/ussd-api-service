@@ -11,7 +11,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
-@SuppressWarnings("serial")
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
