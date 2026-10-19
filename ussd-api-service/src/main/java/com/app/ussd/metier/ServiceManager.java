@@ -1,6 +1,6 @@
 /* Ce service est le service d'entrée de app2. 
 C'est ici que le service concerné est indentifié  : ?????? pb ??? : bah non on ne devrait pas identifier le service dans app2
-car app2 est concu pour un service unique! donc l'identificatiob devrait se faire ailleur !!!
+car app2 est concu pour un service unique! donc l'identification devrait se faire ailleur !!!
 idée : ce service doit etre deplacer dans app3 
 Il utilisera l'url du service pour transfer app2Data vers app2 */
 

@@ -23,6 +23,7 @@ public class InboundRequestConroller {
 	@PostMapping("/app2inbound")
 	public ResponseEntity<String> App3Inbound(@RequestBody App2Data request){
 		
+		// envoie à ServiceManager.ussdService
 
 		return ResponseEntity.ok(null);
 	}
