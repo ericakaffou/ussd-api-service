@@ -1,4 +1,4 @@
-package com.app.ussd;
+package com.app.ussd.utils;
 
 public interface Constants {
 	

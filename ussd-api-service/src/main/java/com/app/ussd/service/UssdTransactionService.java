@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.app.ussd.Constants;
+
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.model.UssdSession;
@@ -13,6 +13,7 @@ import com.app.ussd.model.UssdSessionTransaction;
 import com.app.ussd.model.dto.UssdSessionTransactionDto;
 import com.app.ussd.repository.UssdSessionRepository;
 import com.app.ussd.repository.UssdTransactionRepository;
+import com.app.ussd.utils.Constants;
 
 @Service
 public class UssdTransactionService {

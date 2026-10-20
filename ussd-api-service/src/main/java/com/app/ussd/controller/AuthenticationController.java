@@ -9,18 +9,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.ussd.Constants;
 import com.app.ussd.model.dto.auth.AuthenticationRequest;
 import com.app.ussd.model.dto.auth.AuthenticationResponse;
 import com.app.ussd.service.auth.ApplicationUserDetailsService;
 import com.app.ussd.service.auth.JwtUtil;
+import com.app.ussd.utils.Constants;
 
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.app.ussd.utils.UrlConstants.APP_ROOT;
+
 @Slf4j
 @RestController
-@RequestMapping(APP_ROOT + "/auth")
+@Api(tags = "Authentication")
+@RequestMapping("${app.root.url}" + "/auth")
 public class AuthenticationController {	
 	  
 	private final ApplicationUserDetailsService userDetailsService;	   

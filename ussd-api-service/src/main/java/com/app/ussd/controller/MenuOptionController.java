@@ -1,6 +1,5 @@
 package com.app.ussd.controller;
 
-import static com.app.ussd.utils.UrlConstants.APP_ROOT;
 
 import java.util.List;
 
@@ -22,9 +21,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@RequestMapping("/USSD-API/v2")
 @CrossOrigin("*")
-@Api(APP_ROOT +"/menuOption")
+@Api(tags = "MenuOption")
+@RequestMapping("${app.root.url}" + "/menuoption")
 @RestController
 public class MenuOptionController {
 	
@@ -36,7 +35,7 @@ public class MenuOptionController {
 	}
 
 	//Save
-	@PostMapping(value = "/menuoption" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
+	@PostMapping(value = "/" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Enregistrer ou modifier une option de Menu" , notes = "cette methode permet d'enregistrer  ou modifier une option de Menut" , response = MenuOptionDto.class) 
 	@ApiResponses(value = {
 			 @ApiResponse(code = 200 , message = "l'objet menuOption cree /Modifié "),
@@ -48,7 +47,7 @@ public class MenuOptionController {
 	
 	
 	//listAll
-	@GetMapping(value = "/menuoptions/" ,  produces = MediaType.APPLICATION_JSON_VALUE )
+	@GetMapping(value = "/" ,  produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Renvoi toutes les  options dans la BD" , notes = "cette methode permet de renvoyer toutes les  options dans la BD" , responseContainer = "MenuOptionDto") 
 			@ApiResponses(value = {
 				@ApiResponse(code = 200 , message = "La liste des options dans la BD / une liste vide")
@@ -60,7 +59,7 @@ public class MenuOptionController {
 		 }
 	
 	//find by id 
-	@GetMapping(value = "/menuoption/{id}" , produces = MediaType.APPLICATION_JSON_VALUE )
+	@GetMapping(value = "/{id}" , produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Rechercher une  option" , notes = "cette methode permet de chercher une  option par son id" , response = MenuOptionDto.class) 
 	@ApiResponses(value = {
 			 @ApiResponse(code = 200 , message = "l'objet option trouvée dans la BDD"),
@@ -72,7 +71,7 @@ public class MenuOptionController {
 		}
 	
 	// ListMenuOption BY MenuId 
-	@GetMapping(value = "/menuoption/menu/{id}" ,  produces = MediaType.APPLICATION_JSON_VALUE )
+	@GetMapping(value = "/menu/{id}" ,  produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Renvoi toutes les  options d'un menu" , notes = "cette methode permet de renvoyer toutes les  options d'un menu" , responseContainer = "MenuOptionDto") 
 	@ApiResponses(value = {
 			@ApiResponse(code = 200 , message = "La liste des  options d'un menu / une liste vide")			
@@ -84,7 +83,7 @@ public class MenuOptionController {
 
 	
 	//Delete
-	@DeleteMapping(value = "/menuoption/delete/{id}")
+	@DeleteMapping(value = "/delete/{id}")
 	@ApiOperation(value = "Supprimer une option" , notes = "cette methode permet de supprimer une option par son ID" ) 
 	@ApiResponses(value = {
 			 @ApiResponse(code = 200 , message = "l' option a ete supprimeé ")

@@ -3,7 +3,7 @@ package com.app.ussd.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import com.app.ussd.Constants;
+
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.exception.Exception;
@@ -14,6 +14,7 @@ import com.app.ussd.model.dto.UssdSessionDto;
 import com.app.ussd.repository.ServiceRepository;
 import com.app.ussd.repository.UssdSessionRepository;
 import com.app.ussd.repository.UssdTransactionRepository;
+import com.app.ussd.utils.Constants;
 
 
 @org.springframework.stereotype.Service

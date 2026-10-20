@@ -11,10 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.app.ussd.Constants;
-
 import com.app.ussd.model.Utilisateur;
 import com.app.ussd.repository.UtilisateurRepository;
+import com.app.ussd.utils.Constants;
 
 
 @Service

@@ -3,7 +3,7 @@ package com.app.ussd.service;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
-import com.app.ussd.Constants;
+
 import com.app.ussd.exception.EntityNotFoundException;
 import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.exception.Exception;
@@ -11,6 +11,7 @@ import com.app.ussd.exception.InvalidEntityException;
 import com.app.ussd.model.Roles;
 import com.app.ussd.model.dto.RolesDto;
 import com.app.ussd.repository.RoleRepository;
+import com.app.ussd.utils.Constants;
 import com.app.ussd.validator.RolesValidator;
 import lombok.extern.slf4j.Slf4j;
 

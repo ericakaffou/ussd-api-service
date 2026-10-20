@@ -1,7 +1,5 @@
 package com.app.ussd.controller;
 
-import static com.app.ussd.utils.UrlConstants.APP_ROOT;
-
 import java.util.List;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,9 +19,10 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-@RequestMapping("/USSD-API/v2")
+
 @CrossOrigin("*")
-@Api(APP_ROOT +"/menu")
+@Api(tags = "Menu")
+@RequestMapping("${app.root.url}" + "/menu")
 @RestController
 public class MenuController {
 
@@ -34,7 +33,7 @@ public class MenuController {
 	}
 
 	//Save
-	@PostMapping(value = "/menu" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
+	@PostMapping(value = "/" , consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Enregistrer ou modifier un menu" , notes = "cette methode permet d'enregistrer ou modifier un Menu" , response = MenuDto.class) 
 	@ApiResponses(value = {
 			 @ApiResponse(code = 200 , message = "l'objet Menu cree/modifié "),
@@ -45,7 +44,7 @@ public class MenuController {
 		}
 
 	//findById 
-	@GetMapping(value = "/menu/{id}" , produces = MediaType.APPLICATION_JSON_VALUE )
+	@GetMapping(value = "/{id}" , produces = MediaType.APPLICATION_JSON_VALUE )
 	@ApiOperation(value = "Rechercher un menu" , notes = "cette methode permet de chercher un menu par son id" , response = MenuDto.class) 
 	@ApiResponses(value = {
 			 @ApiResponse(code = 200 , message = "l'objet menu trouvé dans la BDD"),
@@ -56,7 +55,7 @@ public class MenuController {
 	
 	
 	//ListAll
-		@GetMapping(value = "/menus/" ,  produces = MediaType.APPLICATION_JSON_VALUE )
+		@GetMapping(value = "/" ,  produces = MediaType.APPLICATION_JSON_VALUE )
 		@ApiOperation(value = "Renvoi tous les  menus" , notes = "cette methode permet de renvoyer la liste des menus dans la BDD" , responseContainer = "MenuDto") 
 				@ApiResponses(value = {
 					@ApiResponse(code = 200 , message = "La liste des menus / une liste vide")
@@ -66,7 +65,7 @@ public class MenuController {
 		}
 		
 		//Delete
-		@DeleteMapping(value = "/menu/delete/{id}")
+		@DeleteMapping(value = "/delete/{id}")
 		@ApiOperation(value = "Supprimer un menu" , notes = "cette methode permet de supprimer un menu par son ID" ) 
 		@ApiResponses(value = {
 				 @ApiResponse(code = 200 , message = "l'objet menu a ete supprimé dans la BDD")
