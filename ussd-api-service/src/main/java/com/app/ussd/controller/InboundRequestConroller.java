@@ -17,9 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 public class InboundRequestConroller {
 	
 	
-	
-	
-	
 	@PostMapping("/app2inbound")
 	public ResponseEntity<String> App3Inbound(@RequestBody App2Data request){
 		
