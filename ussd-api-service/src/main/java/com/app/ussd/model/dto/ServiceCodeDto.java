@@ -2,7 +2,7 @@ package com.app.ussd.model.dto;
 
 import java.util.List;
 
-import com.app.ussd.model.Covrage;
+import com.app.ussd.model.app.Covrage;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;

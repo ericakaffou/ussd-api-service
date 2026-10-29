@@ -1,6 +1,6 @@
 package com.app.ussd.metier;
 
-import com.app.ussd.model.UssdSession;
+import com.app.ussd.model.app.UssdSession;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package com.app.ussd.model.dto;
 
-import com.app.ussd.model.UssdSession;
-import com.app.ussd.model.UssdSessionParam;
+import com.app.ussd.model.app.UssdSession;
+import com.app.ussd.model.app.UssdSessionParam;
 
 import lombok.Builder;
 import lombok.Data;

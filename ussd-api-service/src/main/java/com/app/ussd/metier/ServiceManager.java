@@ -9,10 +9,11 @@ package com.app.ussd.metier;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
-import com.app.ussd.model.Menu;
-import com.app.ussd.model.MenuOption;
-import com.app.ussd.model.UssdSession;
-import com.app.ussd.model.UssdSessionParam;
+
+import com.app.ussd.model.app.Menu;
+import com.app.ussd.model.app.MenuOption;
+import com.app.ussd.model.app.UssdSession;
+import com.app.ussd.model.app.UssdSessionParam;
 import com.app.ussd.repository.MenuOptionRepository;
 import com.app.ussd.repository.MenuRepository;
 import com.app.ussd.repository.UssdSessionParamRepository;

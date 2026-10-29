@@ -2,10 +2,10 @@ package com.app.ussd.model.dto;
 
 import java.util.List;
 
-import com.app.ussd.model.UssdService;
-import com.app.ussd.model.UssdSession;
-import com.app.ussd.model.UssdSessionParam;
-import com.app.ussd.model.UssdSessionTransaction;
+import com.app.ussd.model.app.UssdService;
+import com.app.ussd.model.app.UssdSession;
+import com.app.ussd.model.app.UssdSessionParam;
+import com.app.ussd.model.app.UssdSessionTransaction;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
