@@ -10,10 +10,8 @@ import com.app.ussd.exception.ErrorCodes;
 import com.app.ussd.exception.Exception;
 import com.app.ussd.exception.InvalidEntityException;
 import com.app.ussd.model.app.Mno;
-import com.app.ussd.model.app.RouteMno;
 import com.app.ussd.model.dto.MnoDto;
 import com.app.ussd.repository.MnoRepository;
-import com.app.ussd.repository.RouteMnoRepository;
 import com.app.ussd.utils.Constants;
 import com.app.ussd.validator.MnoValidator;
 
@@ -22,11 +20,11 @@ public class MnoService {
 	
 
 	private final MnoRepository mnoRepo;
-	private final RouteMnoRepository routeMnoRepo;
+	
 
-	public MnoService(MnoRepository mnoRepo, RouteMnoRepository routeMnoRepo) {
+	public MnoService(MnoRepository mnoRepo ) {
 		this.mnoRepo = mnoRepo;
-		this.routeMnoRepo = routeMnoRepo;
+		
 	}
 
 	//Save
@@ -36,16 +34,14 @@ public class MnoService {
 			 throw new InvalidEntityException (Constants.ERROR,ErrorCodes.MNO_NOT_VALID, errors);
 		}
 		
-		Optional <Mno> optionalMno = mnoRepo.findByMccAndMncAndMnoName(dto.getMcc(), dto.getMnc(), dto.getMnoName()) ;
+		Optional <Mno> optionalMno = mnoRepo.findByMnoNameAndCountry(dto.getMnoName() , dto.getCountyCode()) ;
 		if(!optionalMno.isEmpty()){
 			  throw new Exception (Constants.ERROR,ErrorCodes.MNO_ALREADY_EXIST);
 			  } 
 		
 		 Mno scRegMno = new Mno();
 		    scRegMno.setId(dto.getId());
-		    scRegMno.setMnoName(dto.getMnoName());
-		    scRegMno.setMnc(dto.getMnc());
-		    scRegMno.setMcc(dto.getMcc());
+		    scRegMno.setMnoName(dto.getMnoName());		   
 			return  this.toDto(mnoRepo.save(scRegMno));		    
 	}	
 	
@@ -83,12 +79,7 @@ public class MnoService {
 		public void Delete(Long id) {
 			
 			MnoDto mno = this.FindById(id);
-			
-	    	    List<RouteMno> listMno = routeMnoRepo.findByMnoId(mno.getId());    	 
-	    	   	if (!listMno.isEmpty()) {
-		    		throw new Exception(Constants.FAILED,ErrorCodes.ROUTE_MNO_ALREADY_EXIST, "Delete All ROUTE_MNO linked before");
-				}
-	    	   			    	    	
+				    	   			    	    	
 		    	mnoRepo.deleteById(mno.getId());	
 		    	
 				    		     		
@@ -102,10 +93,9 @@ public class MnoService {
 		    	}
 		    	
 		    	return MnoDto.builder()
-		    			.id(mno.getId())
-		    			.mcc(mno.getMcc())
-		    			.mnc(mno.getMnc())
+		    			.id(mno.getId())		    			
 		    			.mnoName(mno.getMnoName())	
+						.countyCode(mno.getCountry().getCountryCode())
 		    			.build() ;
 		    }
 }

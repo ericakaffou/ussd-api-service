@@ -29,11 +29,7 @@ public class UssdService extends AbstractEntity {
     private Account account;
 	
 	/* 
-	 Parametre utiliser pour transferer ou non les requetes au système du client.
-	 L'Url à laquelle les requètes sont transférés est configurée dans RouteMno
-	 car chaque MNO gère differemment les datas retournées donc un traitement 
-	 different via une url differente  
-	 
+	
 	 NEW idee : remaitre l'url de transfer ici car le formatage des datas de chaque mno sera fait dans son app3 */
 	
 	private boolean forwarded;
@@ -47,10 +43,9 @@ public class UssdService extends AbstractEntity {
     @OneToMany(mappedBy = "service") 
   	private List<UssdSession> ussdSession;
     
-    // Relation with RouteMNO 
+    //Relation with Covrage 
     @OneToMany(mappedBy = "service") 
-	private List<RouteMno> routeMno; 
-    
+	private List<Covrage> listCovrage;    
  
 	
 	

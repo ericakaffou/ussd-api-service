@@ -7,9 +7,11 @@ import lombok.Data;
 @Builder
 public class CovrageDto {
 	
-	private Long id;
-	private Long serviceCodeId;		
-	private String  channel;	
+private Long id;
+	private Long serviceCodeId;	
+	private String covrageName;	
+	private String  channel;
+	private Long serviceId ;	
 	
 	
 }

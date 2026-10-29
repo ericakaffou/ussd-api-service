@@ -1,8 +1,6 @@
 /* Ce service est le service d'entrée de app2. 
-C'est ici que le service concerné est indentifié  : ?????? pb ??? : bah non on ne devrait pas identifier le service dans app2
-car app2 est concu pour un service unique! donc l'identification devrait se faire ailleur !!!
-idée : ce service doit etre deplacer dans app3 
-Il utilisera l'url du service pour transfer app2Data vers app2 */
+
+*/
 
 package com.app.ussd.metier;
 
@@ -10,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
+import com.app.ussd.model.app.App2Data;
 import com.app.ussd.model.app.Menu;
 import com.app.ussd.model.app.MenuOption;
 import com.app.ussd.model.app.UssdSession;
@@ -44,7 +43,7 @@ public class ServiceManager {
 
 	public String ussdService( App2Data app2data ) {		
 		
-		//log.info("App2 - InboundRequestConroller");		
+	
 				
 		 // new session
 		if (app2data.isNewSession()) { 		
@@ -153,15 +152,15 @@ public class ServiceManager {
  		  switch (currentMenu.getMenuType()) {
  		  
  		  case 0 : 
- 			      response = this.MenuOption(inputData, session);
+ 			      response = this.MenuOptionType(inputData, session);
  			      break; 
  			      
  		  case 1 : 
- 			 response = this.MenuDataInput(inputData, session);
+ 			 response = this.MenuDataInputType(inputData, session);
 		      break;	
 		      
  		 case 2 : 
- 			 response = this.MenuServiceResponse(inputData, session);
+ 			 response = this.MenuResponseType(inputData, session);
 		      break;	
 		      
  		 default :
@@ -175,7 +174,7 @@ public class ServiceManager {
 	 /*
 	 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	   */
-	     public String MenuOption ( String inputData ,UssdSession session) {
+	     public String MenuOptionType ( String inputData ,UssdSession session) {
 	    	 String response = null ;
 	    	 List<MenuOption> listOption = optionRepo.findByMenuId(session.getCurrentMenuLevel());
  			 //verifie si le menu contient des options sinon => menu de saisie de donnée
@@ -216,7 +215,7 @@ public class ServiceManager {
      /*
 	 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	   */     
-	     public String MenuDataInput ( String inputData ,UssdSession session) {
+	     public String MenuDataInputType ( String inputData ,UssdSession session) {
 	    	 String response = null ;
 	    	 
 	    	// menu de saisie de donnée
@@ -240,7 +239,7 @@ public class ServiceManager {
      /*
 	 ----------------------------------------------------------------------------------------------------------------------------------------------------
 	   */	     
-	     public String MenuServiceResponse ( String inputData ,UssdSession session) {
+	     public String MenuResponseType ( String inputData ,UssdSession session) {
 	    	 String response = null ;
 	    	 Menu menu = menuRepo.findById(session.getCurrentMenuLevel()).get();
 	    	 String url = menu.getServiceUrl();
