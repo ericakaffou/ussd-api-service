@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.ussd.metier.App2Data;
-
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,9 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 @Api(tags = "App3-Inbound")
 @RequestMapping("${app.root.url}" + "/inbound")
 public class InboundRequestConroller {
-	
-	
-	
 	
 	
 	@PostMapping("/app2inbound")
