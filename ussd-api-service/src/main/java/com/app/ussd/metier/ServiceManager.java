@@ -1,6 +1,7 @@
 /* Ce service est le service d'entrée de app2. 
 
-*/
+
+Il utilisera l'url du service pour transfer app2Data vers app2 */
 
 package com.app.ussd.metier;
 
